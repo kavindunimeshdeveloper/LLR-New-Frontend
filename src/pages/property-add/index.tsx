@@ -22,7 +22,7 @@ function PropertyAdd() {
   useEffect(() => {
     setInitialLoading(true)
     api
-      .get<ActiveSubType>('/active-package')
+      .get<ActiveSubType>('/subscription/active-package')
       .then(res => {
         setPackage(res.data)
         setInitialLoading(false)

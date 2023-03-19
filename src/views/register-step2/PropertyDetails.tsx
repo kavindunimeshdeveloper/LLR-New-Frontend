@@ -49,7 +49,7 @@ const PropertyDetails = ({ initialCreate = false, handleOnSubmit, handleGoBack }
     if (propertyData) {
       setValue('address', propertyData.address)
     } else if (initialCreate) {
-      api.get<PropertyResponseType | null>('/initial-property').then(res => {
+      api.get<PropertyResponseType | null>('/property/property_data').then(res => {
         if (res.data) {
           setValue('address', {
             address1: res.data.address1,
@@ -70,7 +70,7 @@ const PropertyDetails = ({ initialCreate = false, handleOnSubmit, handleGoBack }
     } else {
       setLoading(true)
       api
-        .post('/add-property', propertyStateToApi(data))
+        .post('/property/property_add', propertyStateToApi(data))
         .then(() => {
           setItem('property', JSON.stringify(data))
           if (user) {

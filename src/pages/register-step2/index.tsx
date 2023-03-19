@@ -37,7 +37,7 @@ function RegisterStep2() {
 
   useEffect(() => {
     api
-      .get('/user/details')
+      .get('/user/profile')
       .then(res => {
         if (res.data.stage === STAGE.COMPLETE) {
           router.push('/dashboard')

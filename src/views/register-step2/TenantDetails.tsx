@@ -98,7 +98,7 @@ const TenantDetails = ({ initialCreate, handleGoBack, handleOnSubmit, isAddorEdi
       if (propertyData) {
         const req = propertyWithTeantStateToApi(JSON.parse(propertyData), data)
         api
-          .post('/property', req)
+          .post('/property/property_create', req)
           .then(() => {
             removeItem('property')
             removeItem('tenant')
@@ -113,7 +113,7 @@ const TenantDetails = ({ initialCreate, handleGoBack, handleOnSubmit, isAddorEdi
       }
     } else {
       api
-        .post('/add-tenant', tenantStateToApi(data))
+        .post('/tenant/add-tenant', tenantStateToApi(data))
         .then(() => {
           removeItem('property')
           removeItem('landlord')

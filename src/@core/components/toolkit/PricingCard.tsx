@@ -19,13 +19,13 @@ type Props = {
   image: string
 }
 
-const Row = styled('div')(({}) => ({
+const Row = styled('div')(({ }) => ({
   padding: '0.5rem 0',
   width: '100%',
   textAlign: 'center'
 }))
 
-const Title = styled('div')(({}) => ({
+const Title = styled('div')(({ }) => ({
   color: '#FED900',
   fontWeight: 800,
   fontSize: '1.5rem',
@@ -33,7 +33,7 @@ const Title = styled('div')(({}) => ({
   textTransform: 'uppercase'
 }))
 
-const PriceWrapper = styled('div')(({}) => ({
+const PriceWrapper = styled('div')(({ }) => ({
   display: 'flex',
   alignItems: 'flex-end',
   justifyContent: 'center',
@@ -45,12 +45,12 @@ const PriceWrapper = styled('div')(({}) => ({
   lineHeight: '2rem'
 }))
 
-const SmallFont = styled('div')(({}) => ({
+const SmallFont = styled('div')(({ }) => ({
   fontSize: '1rem',
   lineHeight: '1.5rem'
 }))
 
-const ServicesWrapper = styled('div')(({}) => ({
+const ServicesWrapper = styled('div')(({ }) => ({
   display: 'flex',
   flexDirection: 'column',
   color: 'primary.color',
@@ -87,7 +87,7 @@ const style = {
 // Component start
 
 const PricingCard = ({ title, recommended, price, services, image, id }: Props) => {
-  const CardWrapper = styled('div')(({}) => ({
+  const CardWrapper = styled('div')(({ }) => ({
     zIndex: '50',
     position: 'relative',
     padding: '15px',
@@ -106,7 +106,7 @@ const PricingCard = ({ title, recommended, price, services, image, id }: Props) 
     background: 'rgba(0,0,0,0)'
   }))
 
-  const Background = styled('div')(({}) => ({
+  const Background = styled('div')(({ }) => ({
     position: 'absolute',
     width: '100%',
     height: '100%',
@@ -134,7 +134,7 @@ const PricingCard = ({ title, recommended, price, services, image, id }: Props) 
   const handleSelect = () => {
     setLoading(true)
     api
-      .post('/create-seesion', { productId: id })
+      .post('/payment/create_session', { productId: id })
       .then(res => {
         setLoading(false)
         router.replace(res.data.url)

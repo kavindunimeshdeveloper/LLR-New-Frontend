@@ -28,7 +28,7 @@ const Tenants = () => {
   const getTenants = async () => {
     setLoading(true)
     try {
-      const [tenants, properties] = await Promise.all([api.get('/tenant'), api.get('/all-properties')])
+      const [tenants, properties] = await Promise.all([api.get('/tenant/tenant-data'), api.get('/property/all-properties')])
       setLoading(false)
       setTenants(tenants.data)
       setProps(properties.data)

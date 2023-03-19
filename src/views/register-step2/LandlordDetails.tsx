@@ -73,7 +73,8 @@ const LandlordDetails = ({ handleOnSubmit, initialCreate = false }: LandlordDeta
       setPrivate(landlordData.ownership)
       updateFormData(landlordData)
     } else if (initialCreate) {
-      api.get('/landlord').then(res => {
+      api.get('/landlord/landlord').then(res => {
+        console.log(res)
         if (res.data) {
           updateFormData(landloardApitoState(res.data))
         }
@@ -85,7 +86,7 @@ const LandlordDetails = ({ handleOnSubmit, initialCreate = false }: LandlordDeta
   const onSubmit = (data: LandlordFormData) => {
     setLoading(true)
     api
-      .post('/landlord-register', landlordStateToApi(data))
+      .post('/landlord/landlord-register', landlordStateToApi(data))
       .then(() => {
         setItem('landlord', JSON.stringify(data))
         if (auth.user) {

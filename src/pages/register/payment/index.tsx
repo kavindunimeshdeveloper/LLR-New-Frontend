@@ -64,7 +64,7 @@ const Payment = () => {
     e.preventDefault()
     setLoading(true)
     api
-      .post('/payment/create_session', { productId: "prod_NWcn1NmuZVWhfl" })
+      .post('/payment/create_session', { productId: getProdId() })
       .then(res => {
         setLoading(false)
         router.replace(res.data.url)

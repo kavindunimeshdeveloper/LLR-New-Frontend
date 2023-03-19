@@ -16,7 +16,7 @@ const DialogPropertyEdit = () => {
   const checkPropertyAvailable = async () => {
     setLoading(true)
     try {
-      const { data } = await api.get('/check-add-property')
+      const { data } = await api.get('/property/check-property-add')
       if (data.hasSubscription) {
         setLoading(false)
         router.push('/property-add')

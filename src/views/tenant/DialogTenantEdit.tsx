@@ -53,7 +53,7 @@ const DialogTenantEdit = ({ id, fetchTenant }: Props) => {
   useEffect(() => {
     setLoading(true)
     api
-      .get('/all-properties')
+      .get('/property/all-properties')
       .then(res => {
         setData(res.data)
         setLoading(false)

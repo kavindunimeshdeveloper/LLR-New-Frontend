@@ -38,7 +38,7 @@ const PaymentSuccessPage = () => {
     const { session_id } = router.query
     if (typeof session_id === 'string') {
       api
-        .post('/complete-checkout', { session_id })
+        .post('/payment/complete_session', { session_id })
         .then(res => {
           setLoading(false)
           setApiRes(res)
