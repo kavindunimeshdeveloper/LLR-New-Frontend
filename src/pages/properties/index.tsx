@@ -15,7 +15,7 @@ const Properties = () => {
   useEffect(() => {
     setLoading(true)
     api
-      .get('/all-properties')
+      .get('/property/all-properties')
       .then(res => {
         setLoading(false)
         setData(res.data)

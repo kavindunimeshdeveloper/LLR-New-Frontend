@@ -31,7 +31,7 @@ const Products = () => {
         api.get('/rent-guarantee-product'),
         api.get('/credit-check-product'),
         api.get('/landlord-product'),
-        api.get('/all-properties')
+        api.get('/property/all-properties')
       ])
       setLoading(false)
       setData(prop.data)

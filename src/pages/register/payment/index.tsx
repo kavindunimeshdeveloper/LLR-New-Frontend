@@ -153,7 +153,7 @@ const Payment = () => {
                 >
                   <MenuItem value={process.env.NEXT_PUBLIC_PACKAGE_1 || ''}>Kilimanjaro</MenuItem>
                   <MenuItem value={process.env.NEXT_PUBLIC_PACKAGE_2 || ''}>K2</MenuItem>
-                  {/* <MenuItem value={process.env.NEXT_PUBLIC_PACKAGE_3 || ''}>Everest</MenuItem> */}
+                  <MenuItem value={process.env.NEXT_PUBLIC_PACKAGE_3 || ''}>Everest</MenuItem>
                 </Select>
                 <Grid sx={{ my: 6.5 }} container justifyContent='end' alignItems='center'>
                   <Typography variant='subtitle1' component='span' sx={{ pr: 10 }}>

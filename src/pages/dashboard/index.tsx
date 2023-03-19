@@ -55,8 +55,8 @@ const Dashboard = () => {
     }
     const getData = async () => {
       try {
-        const [property, tenantCount] = await Promise.all([api.get('/property'), api.get('/tenant-count')])
-
+        const [property, tenantCount] = await Promise.all([api.get('/property/property'), api.get('/tenant/tenant-count')])
+        console.log(property)
         console.log(tenantCount)
 
         setLoading(false)
