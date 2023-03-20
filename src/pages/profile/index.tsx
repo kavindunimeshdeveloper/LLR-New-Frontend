@@ -65,7 +65,7 @@ const UserView = () => {
     }
     setSubmitting(true)
     api
-      .put<Profile>('/user', formData, {
+      .post<Profile>('/user/user', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -84,7 +84,10 @@ const UserView = () => {
         auth.setUser(updatedUser)
         toast.success('Profile updated successfully')
         setFile(null)
-        setFileUrl(s => data.imageUrl || s)
+        setFileUrl(s => {
+          console.log(data.imageUrl);
+          return data.imageUrl || s
+        })
         setSubmitting(false)
       })
       .catch(err => {
@@ -96,7 +99,7 @@ const UserView = () => {
   useEffect(() => {
     setLoading(true)
     api
-      .get<ProfileResponse>('/user/details')
+      .get<ProfileResponse>('/user/profile')
       .then(res => {
         setLoading(false)
         const { firstName, email, phone, imageUrl } = res.data.me

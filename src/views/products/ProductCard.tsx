@@ -48,7 +48,7 @@ export default function ProductCard({
   const createPaymentSession = (productId: string) => {
     setLoading(true)
     api
-      .post('/create-payment-session', { quantity: items, productId, propertyId })
+      .post('/payment/create_product_session', { quantity: items, productId, propertyId })
       .then(res => {
         setLoading(false)
         router.replace(res.data.url)
