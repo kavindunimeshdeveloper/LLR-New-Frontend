@@ -2,6 +2,8 @@ import { Box, Card, CardContent, CardHeader, Grid, Stack, Typography, Select, Me
 import { alpha, styled } from '@mui/material/styles';
 import { useTheme } from '@mui/material/styles';
 import EmojiTransportationIcon from '@mui/icons-material/EmojiTransportation';
+import ApartmentIcon from '@mui/icons-material/Apartment';
+import ArticleIcon from '@mui/icons-material/Article';
 
 // streper
 import Stepper from '@mui/material/Stepper'
@@ -70,7 +72,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
 
 
 function Qstep1() {
-    
+
     const theme = useTheme();
     const [age, setAge] = useState<string | number>('');
     const [open, setOpen] = useState(false);
@@ -178,9 +180,9 @@ function Qstep1() {
                                                 }} sx={{ borderRadius: 1, border: '2px solid #0070F3', width: '75%', height: 200, backgroundColor: '#white', color: '#0062cc' }}>
                                                 <Stack spacing={10}>
                                                     <Typography variant='subtitle2' color={'inherit'}>
-                                                        Buildings & Contents
+                                                        Buildings only Cover
                                                     </Typography>
-                                                    <EmojiTransportationIcon sx={{ fontSize: 60, textAlign: 'center', alignSelf: 'center', color: 'inherit' }}></EmojiTransportationIcon>
+                                                    <ApartmentIcon sx={{ fontSize: 60, textAlign: 'center', alignSelf: 'center', color: 'inherit' }}></ApartmentIcon>
                                                 </Stack>
                                             </MuiToggleButton>
                                         </Grid>
@@ -198,9 +200,9 @@ function Qstep1() {
                                                 }} sx={{ borderRadius: 1, border: '2px solid #0070F3', width: '75%', height: 200, backgroundColor: '#white', color: '#0062cc' }}>
                                                 <Stack spacing={10}>
                                                     <Typography variant='subtitle2' color={'inherit'}>
-                                                        Buildings & Contents
+                                                        Contents only Cover
                                                     </Typography>
-                                                    <EmojiTransportationIcon sx={{ fontSize: 60, textAlign: 'center', alignSelf: 'center', color: 'inherit' }}></EmojiTransportationIcon>
+                                                    <ArticleIcon sx={{ fontSize: 60, textAlign: 'center', alignSelf: 'center', color: 'inherit' }}></ArticleIcon>
                                                 </Stack>
                                             </MuiToggleButton>
                                         </Grid>
