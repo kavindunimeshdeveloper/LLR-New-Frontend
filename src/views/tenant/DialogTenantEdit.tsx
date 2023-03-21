@@ -45,7 +45,7 @@ const DialogTenantEdit = ({ id, fetchTenant }: Props) => {
   const router = useRouter()
 
   const checkTenant = async (propertyId: string) => {
-    const res = await api.post('/check-tenant-limit', { propertyId })
+    const res = await api.post('/tenant/tenant-limit', { propertyId })
 
     return res.data.canAdd
   }
@@ -76,7 +76,7 @@ const DialogTenantEdit = ({ id, fetchTenant }: Props) => {
 
   const saveTenant = async (formData: TenantFormData) => {
     api
-      .post('/tenant', { tenantDetails: formData, propertyId: property })
+      .post('/tenant/tenant-add', { tenantDetails: formData, propertyId: property })
       .then(() => {
         setAdding(false)
         setShow(false)

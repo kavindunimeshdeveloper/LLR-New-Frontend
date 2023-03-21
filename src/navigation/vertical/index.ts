@@ -3,6 +3,7 @@ import DashboardOutline from 'mdi-material-ui/ViewDashboardOutline'
 import HomeCityOutline from 'mdi-material-ui/HomeCityOutline'
 import AccountGroupOutline from 'mdi-material-ui/AccountGroupOutline'
 import BriefcaseOutline from 'mdi-material-ui/BriefcaseOutline'
+import RequestQuoteIcon from '@mui/icons-material/RequestQuote';
 
 // import CreditCardOutline from 'mdi-material-ui/CreditCardOutline'
 import BadgeAccountOutline from 'mdi-material-ui/BadgeAccountOutline'
@@ -39,6 +40,11 @@ const navigation = (): VerticalNavItemsType => {
       title: 'Products',
       icon: AccountCashOutline,
       path: '/products'
+    },
+    {
+      title: 'Quotation',
+      icon: RequestQuoteIcon,
+      path: '/quotation'
     },
 
     // {

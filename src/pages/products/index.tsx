@@ -28,16 +28,18 @@ const Products = () => {
   const fetchData = async () => {
     try {
       const [rentGuarantee, creditCheck, landlord, prop] = await Promise.all([
-        api.get('/rent-guarantee-product'),
-        api.get('/credit-check-product'),
-        api.get('/landlord-product'),
+        api.get('/product/guarantee_product'),
+        api.get('/product/credit_product'),
+        api.get('/product/landlord_product'),
         api.get('/property/all-properties')
       ])
+
       setLoading(false)
       setData(prop.data)
       setRentGuarantee(rentGuarantee.data)
       setCreditCheck(creditCheck.data)
       setLandlord(landlord.data)
+      console.log(creditCheckData)
     } catch (error) {
       setLoading(false)
       toast.error(errorHandler(error))

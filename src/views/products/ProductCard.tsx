@@ -48,7 +48,7 @@ export default function ProductCard({
   const createPaymentSession = (productId: string) => {
     setLoading(true)
     api
-      .post('/create-payment-session', { quantity: items, productId, propertyId })
+      .post('/payment/create_product_session', { quantity: items, productId, propertyId })
       .then(res => {
         setLoading(false)
         router.replace(res.data.url)
@@ -62,7 +62,7 @@ export default function ProductCard({
   const createProductSession = (productId: string) => {
     setLoading(true)
     api
-      .post('/create-product-session', { productId, propertyId })
+      .post('/payment/create_products_session', { productId, propertyId })
       .then(res => {
         setLoading(false)
         router.replace(res.data.url)

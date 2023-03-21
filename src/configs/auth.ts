@@ -1,5 +1,5 @@
 export default {
-  meEndpoint: `/user/details`,
+  meEndpoint: `/user/profile`,
   loginEndpoint: '/user/login',
   registerEndpoint: `/user/add`,
   registerPaymentEndpoint: '/registerPayment',

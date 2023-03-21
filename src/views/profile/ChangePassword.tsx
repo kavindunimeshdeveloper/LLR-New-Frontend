@@ -38,7 +38,7 @@ const ChangePassword = () => {
 
   const onSubmit = (data: ChangePasswordType) => {
     api
-      .post('/change-password', data)
+      .post('/user/password-change', data)
       .then(() => toast.success('Password changed successfully'))
       .catch(err => toast.error(errorHandler(err)))
   }
