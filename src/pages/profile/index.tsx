@@ -84,10 +84,7 @@ const UserView = () => {
         auth.setUser(updatedUser)
         toast.success('Profile updated successfully')
         setFile(null)
-        setFileUrl(s => {
-          console.log(data.imageUrl);
-          return data.imageUrl || s
-        })
+        setFileUrl(s => data.imageUrl || s)
         setSubmitting(false)
       })
       .catch(err => {
